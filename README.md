@@ -1,2 +1,2 @@
 # akkoord
-is goed
+jo
