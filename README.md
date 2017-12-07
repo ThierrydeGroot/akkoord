@@ -1,3 +1,3 @@
 # akkoord
 
-![Breadboard schema](https://ibb.co/m3Md4b)
+![Breadboard schema](https://preview.ibb.co/e582VG/Untitled_Sketch_11_schema.png)
