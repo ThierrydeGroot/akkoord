@@ -18,9 +18,6 @@ The circuit:
   The Bluetooth module may interfere with PC to Arduino communication: disconnect VCC when programming the board
 * the built-in led on Pin 13 is also used
 
-This example code is in the public domain.
-*/
-
 // Serial Parameters: COM11 9600 8 N 1 
 // \r or \n to end command line
 // Bluetooth is on Pin 0 & 1 @ 9600 speed
