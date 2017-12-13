@@ -1,9 +1,10 @@
 # akkoord
+omae wa mou shindeiru
 
 Breadboard schema
 
-![Breadboard schema](https://preview.ibb.co/jWk5jb/Untitled_Sketch_12_bb.png)
+![Breadboard schema](https://preview.ibb.co/ejGcpm/Untitled_Sketch_15_bb.png)
 
 Technisch schema
 
-![Technisch schema](https://preview.ibb.co/e582VG/Untitled_Sketch_11_schema.png)
+![Technisch schema](https://preview.ibb.co/neUV9m/Untitled_Sketch_14_schema.png)
