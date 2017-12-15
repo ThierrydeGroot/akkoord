@@ -1,6 +1,3 @@
-//Written by Ahmet Burkay KIRNIK
-//TR_CapaFenLisesi
-//Measure Angle with a MPU-6050(GY-521)
 
 #include<Wire.h>
 
