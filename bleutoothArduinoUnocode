@@ -31,6 +31,8 @@ The circuit:
 // Status message structure
 // STATUS RED|GREEN|YELLOW|TMIN|TMAX|SECONDS|TEMP|THIGH=value
 
+*/
+
 float maxTemp = 30.0; // switch on led when temp > maxTemp
 int maxTempSensor = (int) ((maxTemp / 100 + .5) * 204.8);
 float temperature = 0.0;
