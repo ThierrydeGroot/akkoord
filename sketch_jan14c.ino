@@ -1,9 +1,9 @@
 #include <NewPing.h>
 
-#define TRIGGER_PIN0    12
-#define ECHO_PIN0       11
-#define TRIGGER_PIN1    5
-#define ECHO_PIN1       6
+#define TRIGGER_PIN0    12 // Arduino pin tied to trigger pin on the ultrasonic sensor.
+#define ECHO_PIN0       11 // Arduino pin tied to echo pin on the ultrasonic sensor.
+#define TRIGGER_PIN1    5 // Arduino pin tied to trigger pin on the other ultrasonic sensor.
+#define ECHO_PIN1       6 // Arduino pin tied to echo pin on the other ultrasonic sensor.
 #define MAX_DISTANCE    250 
 
 int sensorValue = 0; // variable to store the value coming from the sensor
