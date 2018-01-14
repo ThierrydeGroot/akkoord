@@ -5,8 +5,8 @@
 
 #define BAT_PIN      A0
 #define LDR_PIN      A1
-#define bluetoothReceivePin 0 // The input pin for receiving bluetouth messages.
-#define bluetoothTransmitPin 1 // The output pin for transmitting bluetouth messages.
+#define bluetoothReceivePin 10 // The input pin for receiving bluetouth messages.
+#define bluetoothTransmitPin 11 // The output pin for transmitting bluetouth messages.
 #define VIBRATE_PIN  13 // Vibration feature for kpt. Ernst's mum.
 #define TRIGGER_PIN0 12 // Arduino pin tied to trigger pin on the ultrasonic sensor.
 #define ECHO_PIN0    11 // Arduino pin tied to echo pin on the ultrasonic sensor.
