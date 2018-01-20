@@ -1,12 +1,11 @@
 #include <NewPing.h>
 #include <elapsedMillis.h>
 #include <Wire.h>
+#include <SoftwareSerial.h> // use the software uart
 
 
 #define BAT_PIN      A0
 #define LDR_PIN      A1
-#define bluetoothReceivePin 0 // The input pin for receiving bluetouth messages.
-#define bluetoothTransmitPin 1 // The output pin for transmitting bluetouth messages.
 #define VIBRATE_PIN  13 // Vibration feature for kpt. Ernst's mum.
 #define TRIGGER_PIN0 12 // Arduino pin tied to trigger pin on the ultrasonic sensor.
 #define ECHO_PIN0    11 // Arduino pin tied to echo pin on the ultrasonic sensor.
@@ -18,13 +17,9 @@
 #define LED_PIN      10
 #define BUZZ_PIN     9
 
+SoftwareSerial bluetooth(2, 4); // RX, TX
+
 //variables
-
-int incomingBluetoothCommand = 0;
-int commandInt = 0;
-String commandString = "";
-String commandArgument = "";
-
 char data = 0;
 
 int MAX_DISTANCE = 250; // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
@@ -47,6 +42,9 @@ elapsedMillis timeElapsedLight;
 elapsedMillis timeElapsedRotated;
 NewPing sonar0(TRIGGER_PIN0, ECHO_PIN0, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 NewPing sonar1(TRIGGER_PIN1, ECHO_PIN1, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
+unsigned long previousMillis = 0;                      // will store last time
+const long interval = 500;                             // interval at which to delay
+static uint32_t tmp;                                   // increment this
 
 //SoftwareSerial bluetoothSerial(bluetoothReceivePin, bluetoothTransmitPin);
 
@@ -68,11 +66,10 @@ void loop() {
   buttonState = digitalRead(BUTTON_PIN);
   if (buttonState == HIGH) alarmMode();
 
-  data = Serial.read();
-  Serial.print(data);
-
-  if (data == '1') turnLeft();
-  if (data == '0') turnRight();
+  if (bluetooth.available()) { // check if anything in UART buffer
+    if (bluetooth.read() == '1') turnLeft();
+    if (bluetooth.read() == '2') turnRight();
+  }
 
   if (rotatedLeft == true)
   {
